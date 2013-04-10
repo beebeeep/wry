@@ -6,6 +6,9 @@ from twisted.internet import reactor
 
 class chess_child(Resource):
     isLeaf = True;
+    def render_GET(self, request):
+        print request
+        return "<html><body>%s</body></html>" % request.uri
 
 class chess(Resource):
     isLeaf = False;
